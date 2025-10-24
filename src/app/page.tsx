@@ -1,6 +1,13 @@
+"use client";
+
 import Image from "next/image";
+import { GalleryThumbnail } from "@/components/gallery-thumbnail";
+import { usePhotoSwipe } from "@/hooks/lightbox";
+import Link from "next/link";
 
 export default function Home() {
+  usePhotoSwipe("#gallery");
+
   return (
     <div className=" flex-col flex items-center justify-center">
       <div className="flex flex-col gap-4">
@@ -11,7 +18,7 @@ export default function Home() {
             src={"/game_logo.png"}
             height={1921}
             width={694}
-            alt={"Shadow of the Colossus Game Title Logo"}
+            alt={"Shadow of the Colossus game title logo"}
             priority
             quality={100}
           />
@@ -20,11 +27,11 @@ export default function Home() {
         {/* GAME COVER */}
         <div className="relative max-w-xs mx-auto">
           <Image
-            className="w-full"
+            className="w-full border border-neutral-900"
             src={"/game_cover.jpg"}
             height={1051}
             width={1579}
-            alt={"Shadow of the Colossus Game Cover"}
+            alt={"Shadow of the Colossus game cover"}
             priority
             quality={100}
           />
@@ -41,6 +48,20 @@ export default function Home() {
           boss battles. Its emotional depth and atmospheric design have made it
           a critically acclaimed classic.
         </h2>
+      </div>
+
+      <div>
+        <div
+          id="gallery"
+          className="flex max-w-5xl mx-auto gap-1 mt-4 items-center flex-wrap md:flex-nowrap"
+        >
+          <GalleryThumbnail imageId={"1.jpg"} width={1920} height={1080} />
+          <GalleryThumbnail imageId={"2.jpg"} width={1920} height={1080} />
+          <GalleryThumbnail imageId={"3.png"} width={1920} height={1080} />
+          <GalleryThumbnail imageId={"4.png"} width={1920} height={1080} />
+          <GalleryThumbnail imageId={"5.png"} width={1920} height={1080} />
+          <GalleryThumbnail imageId={"6.png"} width={1920} height={1080} />
+        </div>
       </div>
     </div>
   );
