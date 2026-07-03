@@ -1,6 +1,6 @@
 export const Description = () => {
   return (
-    <h2 className="md:text-center max-w-2xl text-neutral-800 text-balance md:text-sm">
+    <h2 className="md:text-center max-w-2xl text-neutral-800 text-balance ">
       Shadow of the Colossus is an action-adventure game developed by Team Ico
       and released in 2005 for the PlayStation 2, later remastered for
       subsequent platforms. Set in a vast, desolate world, players control

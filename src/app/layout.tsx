@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import { Container } from "@/components/layout/container";
+import { Footer } from "@/components/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -9,6 +9,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
   title: "Shadow of the Colossus Exhibit",
   description:
     "Discover Shadow of the Colossus, a legendary video game. Explore a haunting world as Wander battles towering Colossi in a breathtaking, minimalist adventure.",
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.className}  antialiased`}>
-        <Container>{children}</Container>
+        {children}
+
+        <Footer />
       </body>
     </html>
   );

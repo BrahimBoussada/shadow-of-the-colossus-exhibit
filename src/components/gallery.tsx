@@ -1,3 +1,6 @@
+"use client";
+
+import { usePhotoSwipe } from "@/hooks/lightbox";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,6 +33,26 @@ export const GalleryThumbnail = ({
           alt={"Game gallery image"}
         />
       </Link>
+    </div>
+  );
+};
+
+export const Gallery = () => {
+  usePhotoSwipe("#gallery");
+
+  return (
+    <div>
+      <div
+        id="gallery"
+        className="flex max-w-5xl mx-auto gap-1 mt-4 items-center flex-wrap md:flex-nowrap"
+      >
+        <GalleryThumbnail imageId={"1.jpg"} width={1920} height={1080} />
+        <GalleryThumbnail imageId={"2.jpg"} width={1920} height={1080} />
+        <GalleryThumbnail imageId={"3.jpg"} width={1920} height={1080} />
+        <GalleryThumbnail imageId={"4.jpg"} width={1920} height={1080} />
+        <GalleryThumbnail imageId={"5.jpg"} width={1920} height={1080} />
+        <GalleryThumbnail imageId={"6.jpg"} width={1920} height={1080} />
+      </div>
     </div>
   );
 };
